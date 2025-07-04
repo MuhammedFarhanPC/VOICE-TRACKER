@@ -1,4 +1,4 @@
-streamlit
+flask
 speechrecognition
 pandas
 xlsxwriter
