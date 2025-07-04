@@ -99,24 +99,23 @@
     <br>
     <a href="/download" class="download-link">⬇️ Download Excel</a>
 
-    <h3>📊 All Entries</h3>
-    {% if data %}
-    <table>
-        <thead>
-            <tr><th>Timestamp</th><th>Name</th><th>Amount</th></tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td>{{ row['Timestamp'] }}</td>
-                <td>{{ row['Account Holder'] }}</td>
-                <td>{{ row['Amount'] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+<h3>📊 All Entries</h3>
+
+{% if data %}
+    <table border="1" style="margin:auto; border-collapse: collapse; width: 60%;">
+        <tr style="background-color: #f2f2f2;">
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Amount</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['Timestamp'] }}</td>
+            <td>{{ row['Account Holder'] }}</td>
+            <td>{{ row['Amount'] }}</td>
+        </tr>
+        {% endfor %}
     </table>
-    {% else %}
-    <p>No data recorded yet.</p>
-    {% endif %}
-</body>
-</html>
+{% else %}
+    <p style="color: gray;">No data recorded yet.</p>
+{% endif %}
